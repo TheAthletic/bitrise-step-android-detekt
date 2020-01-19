@@ -33,7 +33,7 @@ func NewProject(location string) (Project, error) {
 	}
 
 	if !buildGradleFound {
-		return Project{}, fmt.Errorf("no build.gradle file found in (%s)", location)
+		return Project{}, fmt.Errorf("no build.gradle.kts file found in (%s)", location)
 	}
 
 	if location == "/" {
