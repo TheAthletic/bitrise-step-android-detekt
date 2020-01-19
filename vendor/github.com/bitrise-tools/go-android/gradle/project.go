@@ -32,12 +32,12 @@ func NewProject(location string) (Project, error) {
 		return Project{}, err
 	}
 
-	buildGradleFound, err := pathutil.IsPathExists(filepath.Join(location, "build.gradle.kts"))
+	buildGradleFound2, err := pathutil.IsPathExists(filepath.Join(location, "build.gradle.kts"))
 	if err != nil {
 	  return Project{}, err
 	}
 
-	if !buildGradleFound {
+	if !buildGradleFound && !buildGradleFound2 {
 		return Project{}, fmt.Errorf("no build.gradle or build.gradle.kts file found in (%s)", location)
 	}
 
@@ -55,9 +55,11 @@ func NewProject(location string) (Project, error) {
 	projectsCount := 0
 	for _, file := range files {
 		if file.IsDir() {
-			if exists, err := pathutil.IsPathExists(filepath.Join(root, file.Name(), "build.gradle")) || pathutil.IsPathExists(filepath.Join(root, file.Name(), "build.gradle.kts")); err != nil {
+		  exists1, err1 := pathutil.IsPathExists(filepath.Join(root, file.Name(), "build.gradle"))
+		  exists2, err2 := pathutil.IsPathExists(filepath.Join(root, file.Name(), "build.gradle.kts"))
+			err1 != nil || err2 != nil {
 				return Project{}, err
-			} else if exists {
+			} else if exists1 || exists2 {
 				projectsCount++
 			}
 		}
