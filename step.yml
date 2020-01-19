@@ -4,8 +4,8 @@ summary: |
   This step runs detekt gradle task on your project.
 description: |
   This step runs detekt gradle task on your project.
-website: https://github.com/dzinek/bitrise-step-android-detekt
-source_code_url: https://github.com/dzinek/bitrise-step-android-detekt
+website: https://github.com/TheAthletic/bitrise-step-android-detekt.git
+source_code_url: https://github.com/TheAthletic/bitrise-step-android-detekt.git
 support_url: https://github.com/dzinek/bitrise-step-android-detekt/issues
 host_os_tags:
   - osx-10.10
@@ -71,7 +71,7 @@ inputs:
   - arguments:
     opts:
       category: Options
-      title: Additional Gradle Arguments 
+      title: Additional Gradle Arguments
       summary: Extra arguments passed to the gradle task
       description: Extra arguments passed to the gradle task
       is_required: false
