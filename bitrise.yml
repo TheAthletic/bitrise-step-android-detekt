@@ -6,7 +6,7 @@ app:
   - BITRISE_STEP_ID: android-detekt
   - BITRISE_STEP_VERSION: "0.0.2"
   - BITRISE_STEP_GIT_CLONE_URL: https://github.com/dzinek/bitrise-step-android-detekt.git
-  - MY_STEPLIB_REPO_FORK_GIT_URL: $MY_STEPLIB_REPO_FORK_GIT_URL
+  - MY_STEPLIB_REPO_FORK_GIT_URL: https://github.com/TheAthletic/bitrise-step-android-detekt.git
   - TEST_REPO_GIT_CLONE_URL: https://github.com/dzinek/android-testing.git
   - PROJECT_PATH: unit/BasicSample-kotlinAppDetektGradle4.9/
 
